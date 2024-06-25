@@ -41,7 +41,7 @@
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
           luns: [ 300 ]
-          wwns: [ '100000109B41BC46' ]
+          wwns: [ '100000109B41BC76' ]
       register: result
 
     - debug:
