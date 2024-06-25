@@ -28,7 +28,7 @@
         storage_system_info:
           serial: "{{ storage_serial }}"
         spec:
-          start_ldev_id: 0
+          start_ldev_id: 1
           end_ldev_id: 1000
       register: result
 
