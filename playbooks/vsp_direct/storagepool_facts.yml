@@ -4,9 +4,6 @@
   collections:
     - hitachivantara.vspone_block.vsp
 
-  vars_files:
-    - ../ansible_vault_vars/ansible_vault_storage_var.yml
-
   tasks:
     - name: Get all storage pools
       hv_storagepool_facts:
@@ -30,7 +27,7 @@
         storage_system_info:
           serial: "{{ storage_serial }}"
         spec:
-          pool_id: 1
+          pool_id: 0
       register: result
 
     - debug:
