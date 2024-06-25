@@ -4,8 +4,6 @@
   collections:
     - hitachivantara.vspone_block.vsp
 
-  vars_files:
-    - ../ansible_vault_vars/ansible_vault_storage_var.yml
 
   tasks:
     - name: Get all luns
