@@ -1,0 +1,27 @@
+- name: Create Volume
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - hitachivantara.vspone_block.vsp
+
+  tasks:
+    - name: Create lun with capacity saving and auto free lun id selection
+      hv_lun:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: present
+        spec:
+          pool_id: 15
+          size: 1GB
+          capacity_saving: compression_deduplication
+          data_reduction_share: true
+          name: William
+      register: volume_create
+
+    - debug:
+        var: volume_create
+
