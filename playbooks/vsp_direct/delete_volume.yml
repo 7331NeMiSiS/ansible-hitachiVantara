@@ -5,7 +5,8 @@
     - hitachivantara.vspone_block.vsp
 
   tasks:
-    - name: Create lun
+
+    - name: Delete lun just created
       hv_lun:
         connection_info:
           address: "{{ storage_address }}"
@@ -13,12 +14,12 @@
           password: "{{ ansible_vault_storage_secret }}"
         storage_system_info:
           serial: "{{ storage_serial }}"
-        state: present
+        state: absent
         spec:
           lun: 300
-          pool_id: 0
-          size: 1GB
-          name: William
       register: result
+
+    - debug:
+        var: result
 
 
