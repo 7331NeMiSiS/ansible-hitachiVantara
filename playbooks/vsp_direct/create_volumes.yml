@@ -17,7 +17,7 @@
         spec:
           lun: "{{volume_id}}"
           pool_id: "{{pool_id}}"
-          size: "{{volume_size_gb}}"GB
+          size: "{{volume_size_gb}}GB"
           name: "{{volume_name}}"
       register: result
 
