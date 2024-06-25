@@ -30,8 +30,8 @@
         storage_system_info:
           serial: "{{ storage_serial }}"
         spec:
-          start_ldev_id: 1000
-          end_ldev_id: 2000
+          start_ldev_id: 0
+          end_ldev_id: 1000
       register: result
 
     - debug:
@@ -46,7 +46,7 @@
         storage_system_info:
           serial: "{{ storage_serial }}"
         spec:
-          start_ldev_id: 500
+          start_ldev_id: 0
           count: 10
       register: result
 
@@ -62,7 +62,7 @@
         storage_system_info:
           serial: "{{ storage_serial }}"
         spec:
-          name: "database_volume1"
+          name: "DemoJDTGAD"
       register: result
 
     - debug:
@@ -77,7 +77,7 @@
         storage_system_info:
           serial: "{{ storage_serial }}"
         spec:
-          lun: 176
+          lun: 1
       register: result
 
     - debug:
