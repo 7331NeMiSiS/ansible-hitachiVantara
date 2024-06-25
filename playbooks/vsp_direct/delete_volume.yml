@@ -16,7 +16,7 @@
           serial: "{{ storage_serial }}"
         state: absent
         spec:
-          lun: 300
+          lun: "{{ volume_id }}"
       register: result
 
     - debug:
