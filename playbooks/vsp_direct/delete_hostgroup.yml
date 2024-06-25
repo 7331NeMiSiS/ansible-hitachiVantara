@@ -1,0 +1,42 @@
+- name: Delete Hostgroup Module
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - hitachivantara.vspone_block.vsp
+
+    - name: Delete hostgroup CL4-A
+      hv_hg:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: absent
+        spec:
+          name: 'DC1-ESXi-222'
+          port: 'CL3-A'
+          should_delete_all_luns: true
+      register: result
+
+    - debug:
+        var: result
+
+
+    - name: Delete hostgroup CL4-A
+      hv_hg:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: absent
+        spec:
+          name: 'DC1-ESXi-222'
+          port: 'CL4-A'
+          should_delete_all_luns: true
+      register: result
+
+    - debug:
+        var: result

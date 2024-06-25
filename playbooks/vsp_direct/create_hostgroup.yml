@@ -1,0 +1,48 @@
+- name: Create Hostgroup Module
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - hitachivantara.vspone_block.vsp
+
+    - name: Create hostgroup CL3-A
+      hv_hg:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: present
+        spec:
+          name: 'DC1-ESXi-222'
+          port: 'CL3-A'
+          host_mode: 'VMWARE_EXTENSION'
+          host_mode_options: [ 54, 63, 91, 114 ]
+          luns: [ 300 ]
+          wwns: [ '100000109B41BC45' ]
+      register: result
+
+    - debug:
+        var: result
+
+
+    - name: Create hostgroup CL4-A
+      hv_hg:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: present
+        spec:
+          name: 'DC1-ESXi-222'
+          port: 'CL4-A'
+          host_mode: 'VMWARE_EXTENSION'
+          host_mode_options: [ 54, 63, 91, 114 ]
+          luns: [ 300 ]
+          wwns: [ '100000109B41BC46' ]
+      register: result
+
+    - debug:
+        var: result
