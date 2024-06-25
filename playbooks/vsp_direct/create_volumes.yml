@@ -20,5 +20,6 @@
           size: "{{volume_size_gb}}GB"
           name: "{{volume_name}}"
       register: result
-
+    - debug:
+        var: result
 

@@ -3,7 +3,7 @@
   gather_facts: false
   collections:
     - hitachivantara.vspone_block.vsp
-
+  tasks:
     - name: Create hostgroup CL3-A
       hv_hg:
         connection_info:
