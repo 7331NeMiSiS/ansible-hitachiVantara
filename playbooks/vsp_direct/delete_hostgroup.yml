@@ -4,7 +4,7 @@
   collections:
     - hitachivantara.vspone_block.vsp
   tasks:
-    - name: Delete hostgroup CL3-A
+    - name: Delete hostgroup CL5-A
       hv_hg:
         connection_info:
           address: "{{ storage_address }}"
@@ -15,7 +15,7 @@
         state: absent
         spec:
           name: 'DC1-ESXi-222'
-          port: 'CL3-A'
+          port: 'CL5-A'
           should_delete_all_luns: true
       register: result
 
@@ -33,8 +33,8 @@
           serial: "{{ storage_serial }}"
         state: absent
         spec:
-          name: 'DC1-ESXi-222'
-          port: 'CL4-A'
+          name: 'DC1-ESXi-224'
+          port: 'CL6-A'
           should_delete_all_luns: true
       register: result
 

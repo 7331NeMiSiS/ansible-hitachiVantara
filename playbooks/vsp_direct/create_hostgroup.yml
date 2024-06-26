@@ -4,7 +4,7 @@
   collections:
     - hitachivantara.vspone_block.vsp
   tasks:
-    - name: Create hostgroup CL3-A
+    - name: Create hostgroup CL5-A
       hv_hg:
         connection_info:
           address: "{{ storage_address }}"
@@ -26,7 +26,7 @@
         var: result
 
 
-    - name: Create hostgroup CL4-A
+    - name: Create hostgroup CL6-A
       hv_hg:
         connection_info:
           address: "{{ storage_address }}"
