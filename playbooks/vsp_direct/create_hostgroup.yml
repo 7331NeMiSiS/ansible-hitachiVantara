@@ -15,7 +15,7 @@
         state: present
         spec:
           name: 'DC1-ESXi-224'
-          port: 'CL3-A'
+          port: 'CL5-A'
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
           luns: [ 300 ]
@@ -37,7 +37,7 @@
         state: present
         spec:
           name: 'DC1-ESXi-224'
-          port: 'CL4-A'
+          port: 'CL6-A'
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
           luns: [ 300 ]
