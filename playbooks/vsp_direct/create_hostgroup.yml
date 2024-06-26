@@ -14,12 +14,12 @@
           serial: "{{ storage_serial }}"
         state: present
         spec:
-          name: 'DC1-ESXi-222'
+          name: 'DC1-ESXi-224'
           port: 'CL3-A'
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
           luns: [ 300 ]
-          wwns: [ '100000109B41BC45' ]
+          wwns: [ '100000109b41bc21' ]
       register: result
 
     - debug:
@@ -36,12 +36,12 @@
           serial: "{{ storage_serial }}"
         state: present
         spec:
-          name: 'DC1-ESXi-222'
+          name: 'DC1-ESXi-224'
           port: 'CL4-A'
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
           luns: [ 300 ]
-          wwns: [ '100000109B41BC76' ]
+          wwns: [ '100000109b41bc22' ]
       register: result
 
     - debug:
