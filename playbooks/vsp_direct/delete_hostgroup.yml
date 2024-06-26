@@ -14,7 +14,7 @@
           serial: "{{ storage_serial }}"
         state: absent
         spec:
-          name: 'DC1-ESXi-222'
+          name: 'DC1-ESXi-224'
           port: 'CL5-A'
           should_delete_all_luns: true
       register: result

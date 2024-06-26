@@ -4,6 +4,8 @@
   collections:
     - hitachivantara.vspone_block.vsp
   tasks:
+
+
     - name: Create hostgroup CL5-A
       hv_hg:
         connection_info:
