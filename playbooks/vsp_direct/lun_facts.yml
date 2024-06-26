@@ -23,15 +23,3 @@
     - debug:
         var: result
 
-    - name: Get all luns
-      hv_lun_facts:
-        connection_info:
-          address: "{{ storage_address }}"
-          username: "{{ ansible_vault_storage_username }}"
-          password: "{{ ansible_vault_storage_secret }}"
-        storage_system_info:
-          serial: "{{ storage_serial }}"
-      register: result
-
-    - debug:
-        var: result
