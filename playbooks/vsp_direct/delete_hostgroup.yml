@@ -23,7 +23,7 @@
         var: result
 
 
-    - name: Delete hostgroup CL4-A
+    - name: Delete hostgroup CL6-A
       hv_hg:
         connection_info:
           address: "{{ storage_address }}"
