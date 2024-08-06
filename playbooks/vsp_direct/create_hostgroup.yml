@@ -20,7 +20,7 @@
           port: 'CL5-A'
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
-          luns: [ 300 ]
+          luns: [ 4800 ]
           wwns: [ '100000109b41bc21' ]
       register: result
 
@@ -42,7 +42,7 @@
           port: 'CL6-A'
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
-          luns: [ 300 ]
+          luns: [ 4800 ]
           wwns: [ '100000109b41bc22' ]
       register: result
 
