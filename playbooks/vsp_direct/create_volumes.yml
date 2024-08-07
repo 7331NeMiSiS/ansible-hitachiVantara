@@ -5,7 +5,7 @@
     - hitachivantara.vspone_block.vsp
 
   tasks:
-    - name: Create lun
+    - name: Create lun 4801
       hv_lun:
         connection_info:
           address: "{{ storage_address }}"
@@ -21,6 +21,51 @@
           name: "{{volume_name}}"
           
       register: result
+    - debug:
+        var: result
+
+
+
+    - name: Create hostgroup CL5-A for EXi - 221
+      hv_hg:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: present
+        spec:
+          name: 'DC1-ESXi-221'
+          port: 'CL5-A'
+          host_mode: 'VMWARE_EXTENSION'
+          host_mode_options: [ 54, 63, 91, 114 ]
+          luns: [ 4801 ]
+          wwns: [ '100000109b41bd68' ]
+      register: result
+
+    - debug:
+        var: result
+
+
+    - name: Create hostgroup CL6-A
+      hv_hg:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: present
+        spec:
+          name: 'DC1-ESXi-221'
+          port: 'CL6-A'
+          host_mode: 'VMWARE_EXTENSION'
+          host_mode_options: [ 54, 63, 91, 114 ]
+          luns: [ 4800 ]
+          wwns: [ '100000109b41bd69' ]
+      register: result
+
     - debug:
         var: result
 
