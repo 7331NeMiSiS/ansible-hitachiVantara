@@ -40,3 +40,39 @@
 
     - debug:
         var: result
+    - name: Delete hostgroup CL5-A
+      hv_hg:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: absent
+        spec:
+          name: 'DC1-ESXi-221'
+          port: 'CL5-A'
+          should_delete_all_luns: true
+      register: result
+
+    - debug:
+        var: result
+
+
+    - name: Delete hostgroup CL6-A
+      hv_hg:
+        connection_info:
+          address: "{{ storage_address }}"
+          username: "{{ ansible_vault_storage_username }}"
+          password: "{{ ansible_vault_storage_secret }}"
+        storage_system_info:
+          serial: "{{ storage_serial }}"
+        state: absent
+        spec:
+          name: 'DC1-ESXi-221'
+          port: 'CL6-A'
+          should_delete_all_luns: true
+      register: result
+
+    - debug:
+        var: result
