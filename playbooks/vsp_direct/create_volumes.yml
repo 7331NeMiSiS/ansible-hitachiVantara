@@ -41,7 +41,7 @@
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
           luns: [ 4801 ]
-          wwns: [ '100000109b41bd68' ]
+          wwns: [ '{{volume_id}}' ]
       register: result
 
     - debug:
@@ -62,7 +62,7 @@
           port: 'CL6-A'
           host_mode: 'VMWARE_EXTENSION'
           host_mode_options: [ 54, 63, 91, 114 ]
-          luns: [ 4800 ]
+          luns: [ '{{volume_id}}' ]
           wwns: [ '100000109b41bd69' ]
       register: result
 
