@@ -1,4 +1,4 @@
-storage_serial: 613529
-storage_address: 192.168.183.55
+storage_serial: 613496
+storage_address: 192.168.182.55
 ansible_vault_storage_username: ansible
 ansible_vault_storage_secret: Remote01
