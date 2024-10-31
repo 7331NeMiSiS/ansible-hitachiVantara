@@ -6,7 +6,7 @@
 
   tasks:
     - name: Create lun 4801
-      hv_lun:
+      hv_ldev:
         connection_info:
           address: "{{ storage_address }}"
           username: "{{ ansible_vault_storage_username }}"
